@@ -15,17 +15,22 @@ export function Hero() {
           <span className="font-mono font-bold text-xs sm:text-base">SYSTEM STATUS: ONLINE</span>
         </div>
 
-        <h1 className="text-[11vw] sm:text-[9vw] md:text-[8vw] leading-[0.85] sm:leading-[0.8] font-black uppercase tracking-tighter mb-3 sm:mb-5 reveal mix-blend-darken">
-          BACKEND
-          <br />
-          <span className="text-white text-stroke-black">DEVELOPER</span>
+        <h1 className="text-[20vw] sm:text-[15vw] md:text-[12vw] leading-[0.85] sm:leading-[0.8] font-black uppercase tracking-tighter mb-4 sm:mb-6 reveal mix-blend-darken">
+          AKHIL
         </h1>
 
-        <p className="font-mono text-sm sm:text-base md:text-xl max-w-2xl mx-auto mb-5 sm:mb-8 bg-neo-yellow border-2 border-black p-2.5 sm:p-3.5 shadow-hard reveal rotate-1">
-          Building scalable APIs with intelligence. <br className="hidden sm:block" />
-          <span className="sm:hidden"> </span>
-          <b>Python • Django • ML • Penetration Testing</b>
-        </p>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-tight mb-5 sm:mb-8 text-black reveal">
+          Software Engineer
+        </h2>
+
+        <div className="font-mono text-sm sm:text-base md:text-lg max-w-2xl mx-auto mb-5 sm:mb-8 bg-neo-yellow border-4 border-black p-4 sm:p-5 md:p-6 shadow-hard reveal">
+          <p className="mb-3 sm:mb-4 text-black font-medium leading-relaxed">
+            Building scalable backend systems and ML-powered applications.
+          </p>
+          <p className="text-black font-bold">
+            Python • Django • REST APIs • Machine Learning
+          </p>
+        </div>
 
         <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-5 reveal">
           <a
