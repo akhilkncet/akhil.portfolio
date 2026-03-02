@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/api/',
     },
-    sitemap: 'https://akhilr.dev/sitemap.xml',
+    sitemap: 'https://akhilr.web.app/sitemap.xml',
   };
 }

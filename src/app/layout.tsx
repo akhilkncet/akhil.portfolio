@@ -21,14 +21,14 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://akhilr.dev'),
+  metadataBase: new URL('https://akhilr.web.app'),
   title: {
     default: 'AKHIL R | Cybersecurity & Backend Developer',
     template: '%s | Akhil R',
   },
   description: 'Computer Science Student specializing in Cybersecurity, Backend Development, and Machine Learning. Building secure, intelligent systems.',
   keywords: ['Akhil R', 'Cybersecurity', 'Backend Developer', 'Machine Learning', 'Python', 'Django', 'Portfolio', 'Security Engineer', 'Penetration Testing', 'Full Stack Developer'],
-  authors: [{ name: 'Akhil R', url: 'https://akhilr.dev' }],
+  authors: [{ name: 'Akhil R', url: 'https://akhilr.web.app' }],
   creator: 'Akhil R',
   publisher: 'Akhil R',
   formatDetection: {
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://akhilr.dev',
+    url: 'https://akhilr.web.app',
     title: 'AKHIL R | Cybersecurity & Backend Developer',
     description: 'Computer Science Student specializing in Cybersecurity, Backend Development, and Machine Learning.',
     siteName: 'Akhil R Portfolio',
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://akhilr.dev',
+    canonical: 'https://akhilr.web.app',
   },
   verification: {
     google: 'your-google-site-verification-code',
