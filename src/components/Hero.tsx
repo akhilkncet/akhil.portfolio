@@ -83,13 +83,13 @@ function ResumeModal({ onClose }: ResumeModalProps) {
       id: 1,
       title: 'Resume Version 1',
       path: '/Resume/resume (1).pdf',
-      description: 'Standard Resume Format'
+      description: 'Non-ATS Version'
     },
     {
       id: 2,
       title: 'Resume Version 2',
       path: '/Resume/resume (2).pdf',
-      description: 'Alternative Resume Format'
+      description: 'ATS Version'
     }
   ];
 
