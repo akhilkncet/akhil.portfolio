@@ -15,19 +15,17 @@ export function Hero() {
           <span className="font-mono font-bold text-xs sm:text-base">SYSTEM STATUS: ONLINE</span>
         </div>
 
-        <h1 className="text-[20vw] sm:text-[15vw] md:text-[12vw] leading-[0.85] sm:leading-[0.8] font-black uppercase tracking-tighter mb-4 sm:mb-6 reveal mix-blend-darken">
+        <h1 className="text-[13vw] sm:text-[11vw] md:text-[10vw] lg:text-[9vw] leading-[0.7] sm:leading-[0.65] font-black uppercase tracking-wide mb-3 sm:mb-5 reveal mix-blend-darken">
           AKHIL
+          <br />
+          <span className="text-white text-stroke-black text-[5.5vw] sm:text-[4.5vw] md:text-[4vw] lg:text-[3.5vw] tracking-wider">SOFTWARE ENGINEER</span>
         </h1>
 
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-tight mb-5 sm:mb-8 text-black reveal">
-          Software Engineer
-        </h2>
-
         <div className="font-mono text-sm sm:text-base md:text-lg max-w-2xl mx-auto mb-5 sm:mb-8 bg-neo-yellow border-4 border-black p-4 sm:p-5 md:p-6 shadow-hard reveal">
-          <p className="mb-3 sm:mb-4 text-black font-medium leading-relaxed">
+          <p className="mb-3 sm:mb-4 leading-relaxed">
             Building scalable backend systems and ML-powered applications.
           </p>
-          <p className="text-black font-bold">
+          <p className="font-bold">
             Python • Django • REST APIs • Machine Learning
           </p>
         </div>
