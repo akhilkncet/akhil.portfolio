@@ -21,23 +21,23 @@ export function About() {
             <div className="md:col-span-8 flex flex-col justify-center reveal">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase mb-3 sm:mb-5">Who am I?</h2>
               <p className="font-mono text-sm sm:text-base md:text-lg leading-relaxed mb-3 sm:mb-5">
-                I am Akhil R, a Computer Science professional passionate about{' '}
-                <span className="bg-neo-yellow px-1 border border-black">cybersecurity</span> and building intelligent systems.
+                I am Akhil. A software engineer focused on building{' '}
+                <span className="bg-neo-yellow px-1 border border-black">scalable backend systems</span> and intelligent applications. I design systems that are efficient, secure, and production-ready.
               </p>
               <p className="font-mono text-xs sm:text-sm md:text-base mb-4 sm:mb-6 text-gray-600 border-l-4 border-neo-purple pl-2.5 sm:pl-3.5">
-                &gt; Specialized in Cybersecurity &amp; Backend Development.
+                &gt; Specialized in Backend Development and Applied Machine Learning.
                 <br />
-                &gt; Passionate about Machine Learning &amp; Secure Code.
+                &gt; Strong foundation in Data Structures, Algorithms, and System Design.
                 <br />
-                &gt; Building solutions that protect and empower users.
+                &gt; Experience building REST APIs, ML pipelines, and secure applications.
               </p>
 
               <div className="flex gap-2 sm:gap-4 flex-wrap">
                 <div className="bg-neo-black text-white px-3 py-2 sm:px-4 font-mono text-xs sm:text-sm border-2 border-transparent">
-                  📍 Tamil Nadu, India
+                  📍 India
                 </div>
                 <div className="bg-neo-green text-black px-3 py-2 sm:px-4 font-mono text-xs sm:text-sm border-2 border-black">
-                  🟢 Student & Freelancer
+                  🟢 Open to Full-Time Roles &amp; Research Opportunities
                 </div>
               </div>
             </div>
