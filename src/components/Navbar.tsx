@@ -32,6 +32,12 @@ export const Navbar = () => {
             /SKILLS
           </a>
           <a
+            href="#projects"
+            className="px-3 py-1 font-mono font-bold text-sm hover:bg-black hover:text-white transition-colors cursor-hover"
+          >
+            /WORK
+          </a>
+          <a
             href="#experience"
             className="px-3 py-1 font-mono font-bold text-sm hover:bg-black hover:text-white transition-colors cursor-hover"
           >
@@ -42,12 +48,6 @@ export const Navbar = () => {
             className="px-3 py-1 font-mono font-bold text-sm hover:bg-black hover:text-white transition-colors cursor-hover"
           >
             /AWARDS
-          </a>
-          <a
-            href="#projects"
-            className="px-3 py-1 font-mono font-bold text-sm hover:bg-black hover:text-white transition-colors cursor-hover"
-          >
-            /WORK
           </a>
           <a
             href="#contact"
@@ -88,6 +88,13 @@ export const Navbar = () => {
               /SKILLS
             </a>
             <a
+              href="#projects"
+              onClick={closeMenu}
+              className="px-5 py-3 font-mono font-bold text-sm hover:bg-black hover:text-white transition-colors border-b-2 border-black"
+            >
+              /WORK
+            </a>
+            <a
               href="#experience"
               onClick={closeMenu}
               className="px-5 py-3 font-mono font-bold text-sm hover:bg-black hover:text-white transition-colors border-b-2 border-black"
@@ -100,13 +107,6 @@ export const Navbar = () => {
               className="px-5 py-3 font-mono font-bold text-sm hover:bg-black hover:text-white transition-colors border-b-2 border-black"
             >
               /AWARDS
-            </a>
-            <a
-              href="#projects"
-              onClick={closeMenu}
-              className="px-5 py-3 font-mono font-bold text-sm hover:bg-black hover:text-white transition-colors border-b-2 border-black"
-            >
-              /WORK
             </a>
             <a
               href="#contact"
