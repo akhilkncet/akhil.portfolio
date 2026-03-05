@@ -1,7 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { achievements } from '@/lib/data';
+import { OptimizedImage } from './OptimizedImage';
 
 type Category = 'internship' | 'hackathon' | 'certification';
 
@@ -9,6 +10,26 @@ export function Achievements() {
   const [selectedCertificate, setSelectedCertificate] = useState<typeof achievements[0] | null>(null);
   const [activeTab, setActiveTab] = useState<Category>('internship');
   const [showAllModal, setShowAllModal] = useState(false);
+  
+  // Lock body and html scroll when any modal is open
+  useEffect(() => {
+    if (selectedCertificate || showAllModal) {
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+      document.documentElement.style.overflow = 'hidden';
+      document.body.style.overflow = 'hidden';
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+    } else {
+      document.documentElement.style.overflow = '';
+      document.body.style.overflow = '';
+      document.body.style.paddingRight = '';
+    }
+    
+    return () => {
+      document.documentElement.style.overflow = '';
+      document.body.style.overflow = '';
+      document.body.style.paddingRight = '';
+    };
+  }, [selectedCertificate, showAllModal]);
   
   const internships = achievements.filter(a => a.category === 'internship');
   const hackathons = achievements.filter(a => a.category === 'hackathon');
@@ -42,12 +63,12 @@ export function Achievements() {
       className={`bg-[#1a1a1a] border-4 border-${achievement.color} shadow-hard p-2.5 sm:p-4 md:p-5 hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all cursor-pointer group h-full flex flex-col`}
     >
       <div className="aspect-video bg-[#1a1a1a] border-2 border-gray-700 mb-2 sm:mb-3 md:mb-4 overflow-hidden">
-        <img 
+        <OptimizedImage 
           src={achievement.image} 
           alt={achievement.title}
+          width={400}
+          height={225}
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-          loading="lazy"
-          decoding="async"
         />
       </div>
       <div className="space-y-1 sm:space-y-1.5 md:space-y-2 flex-grow">
@@ -70,11 +91,11 @@ export function Achievements() {
 
     return (
       <div
-        className="fixed inset-0 z-[100] flex items-center justify-center px-2 sm:px-4 bg-black/80 backdrop-blur-sm"
+        className="fixed inset-0 z-[100] flex items-start justify-center px-2 sm:px-4 py-8 bg-black/90 backdrop-blur-md overflow-y-auto"
         onClick={() => setSelectedCertificate(null)}
       >
         <div
-          className="relative max-w-7xl w-full bg-[#1a1a1a] border-4 border-cyan-400 shadow-hard p-4 sm:p-6 max-h-[90vh] overflow-y-auto"
+          className="relative max-w-7xl w-full bg-[#1a1a1a] border-4 border-cyan-400 shadow-hard p-4 sm:p-6 my-auto"
           onClick={e => e.stopPropagation()}
         >
           <button
@@ -99,15 +120,15 @@ export function Achievements() {
             {hasDescription ? (
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
                 <div className="bg-[#1a1a1a] border-2 border-gray-700 p-3 sm:p-4">
-                  <img
+                  <OptimizedImage
                     src={selectedCertificate.image}
                     alt={selectedCertificate.title}
-                    className="w-full h-auto object-contain max-h-[50vh] sm:max-h-[70vh]"
-                    loading="lazy"
-                    decoding="async"
+                    width={800}
+                    height={600}
+                    className="w-full h-auto object-contain"
                   />
                 </div>
-                <div className="bg-[#0a0a0a] border-2 border-gray-700 p-4 sm:p-6 overflow-y-auto max-h-[50vh] sm:max-h-[70vh]">
+                <div className="bg-[#0a0a0a] border-2 border-gray-700 p-4 sm:p-6">
                   <h4 className="text-lg sm:text-xl font-black uppercase text-neo-green mb-3 sm:mb-4">/// DETAILS</h4>
                   <ul className="font-mono text-sm sm:text-base text-gray-300 leading-relaxed space-y-2 sm:space-y-3 list-none">
                     {(selectedCertificate.description ?? '').split(/(?<=\.)\s+/).filter(item => item.trim()).map((point, idx) => (
@@ -121,12 +142,12 @@ export function Achievements() {
               </div>
             ) : (
               <div className="bg-[#1a1a1a] border-2 border-gray-700 p-3 sm:p-4">
-                <img
+                <OptimizedImage
                   src={selectedCertificate.image}
                   alt={selectedCertificate.title}
-                  className="w-full h-auto object-contain max-h-[50vh] sm:max-h-[70vh]"
-                  loading="lazy"
-                  decoding="async"
+                  width={1200}
+                  height={900}
+                  className="w-full h-auto object-contain"
                 />
               </div>
             )}
@@ -220,11 +241,11 @@ export function Achievements() {
   function AllCertificatesModal() {
     return (
       <div
-        className="fixed inset-0 z-[100] flex items-center justify-center px-2 sm:px-4 bg-black/90 backdrop-blur-sm"
+        className="fixed inset-0 z-[100] flex items-start justify-center px-2 sm:px-4 py-8 bg-black/90 backdrop-blur-md overflow-y-auto"
         onClick={() => setShowAllModal(false)}
       >
         <div
-          className="relative max-w-7xl w-full bg-[#0a0a0a] border-4 border-neo-blue shadow-hard p-4 sm:p-6 md:p-8 max-h-[90vh] overflow-y-auto"
+          className="relative max-w-7xl w-full bg-[#0a0a0a] border-4 border-neo-blue shadow-hard p-4 sm:p-6 md:p-8 my-auto"
           onClick={e => e.stopPropagation()}
         >
           <div className="sticky top-0 bg-[#0a0a0a] pb-4 mb-4 border-b-2 border-neo-blue z-10">

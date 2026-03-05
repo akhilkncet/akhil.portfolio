@@ -5,6 +5,8 @@ import { ClientLayout } from './ClientLayout';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { StructuredData } from '@/components/StructuredData';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -96,6 +98,9 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+        <link rel="dns-prefetch" href="https://api.github.com" />
+        {/* Preload critical images for LCP optimization */}
+        <link rel="preload" as="image" href="/images/akhil.jpg" />
         <link
           href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
           rel="stylesheet"
@@ -110,6 +115,8 @@ export default function RootLayout({
           <main>{children}</main>
           <Footer />
         </ClientLayout>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

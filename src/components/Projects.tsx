@@ -1,4 +1,5 @@
 import { projects } from '@/lib/data';
+import { OptimizedImage } from './OptimizedImage';
 
 export function Projects() {
   // For masonry effect, we'll assign different heights to cards
@@ -29,12 +30,12 @@ export function Projects() {
               style={{ pageBreakInside: 'avoid' }}
             >
               <div className="bg-black border-2 border-black aspect-video relative overflow-hidden mb-2 sm:mb-3 md:mb-4 group-hover:shadow-none transition-all">
-                <img
+                <OptimizedImage
                   src={project.image}
                   alt={project.title}
+                  width={500}
+                  height={300}
                   className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
-                  loading="lazy"
-                  decoding="async"
                 />
               </div>
               <div className="space-y-1.5 sm:space-y-2 md:space-y-3">

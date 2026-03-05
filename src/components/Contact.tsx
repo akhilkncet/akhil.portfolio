@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import emailjs from '@emailjs/browser';
 
 // EmailJS configuration - Replace with your actual values
 const EMAILJS_CONFIG = {
@@ -60,12 +59,18 @@ export function Contact() {
     setToasts(prev => prev.filter(t => t.id !== id));
   };
 
-  // Initialize EmailJS
+  // Initialize EmailJS - Lazy load only when component mounts
   useEffect(() => {
     const initializeEmailJS = async () => {
       try {
+        console.log('Lazy loading EmailJS...');
+        // Dynamically import EmailJS
+        const emailjsModule = await import('@emailjs/browser');
+        const emailjs = emailjsModule.default;
+        
         console.log('Initializing EmailJS with config:', EMAILJS_CONFIG);
-        await new Promise(resolve => setTimeout(resolve, 500));
+        await emailjs.init(EMAILJS_CONFIG.publicKey);
+        await new Promise(resolve => setTimeout(resolve, 300));
         setEmailjsReady(true);
         console.log('EmailJS initialized successfully');
       } catch (error) {
@@ -150,6 +155,10 @@ export function Contact() {
   };
 
   const sendEmail = async (templateParams: any) => {
+    // Dynamically import EmailJS for sending
+    const emailjsModule = await import('@emailjs/browser');
+    const emailjs = emailjsModule.default;
+    
     return emailjs.send(
       EMAILJS_CONFIG.serviceId,
       EMAILJS_CONFIG.templateId,

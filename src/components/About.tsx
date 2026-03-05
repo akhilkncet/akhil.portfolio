@@ -1,3 +1,5 @@
+import { OptimizedImage } from './OptimizedImage';
+
 export function About() {
   return (
     <section id="about" className="py-16 sm:py-24 px-4">
@@ -6,12 +8,13 @@ export function About() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-12">
             <div className="md:col-span-4 reveal">
               <div className="aspect-square max-w-xs mx-auto md:max-w-none bg-gray-200 border-4 border-black relative shadow-hard overflow-hidden group">
-                <img
+                <OptimizedImage
                   src="/images/akhil.jpg"
                   alt="Akhil R"
+                  width={400}
+                  height={400}
+                  priority={true}
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-                  loading="lazy"
-                  decoding="async"
                 />
                 <span className="absolute top-2 left-2 bg-neo-red text-white px-2 font-mono text-xs border border-black z-10">
                   PROFILE.JPG

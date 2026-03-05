@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useCursor } from '@/hooks/useCursor';
 import { useScrollProgress } from '@/hooks/useScrollProgress';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
+import { usePWA } from '@/hooks/usePWA';
 import { SplashScreen } from '@/components/SplashScreen';
 
 export function ClientLayout({ children }: { children: React.ReactNode }) {
@@ -12,6 +13,7 @@ export function ClientLayout({ children }: { children: React.ReactNode }) {
   useCursor();
   useScrollReveal();
   useScrollProgress();
+  usePWA(); // Register service worker for PWA support
 
   return (
     <>

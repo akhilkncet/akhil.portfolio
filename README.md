@@ -1,9 +1,10 @@
 # AKHIL R - Portfolio (Next.js 15)
 
-**Modern Neo-Brutalist Portfolio with SSG for Perfect SEO**
+**Modern Neo-Brutalist Portfolio with SSG for Perfect SEO + Performance Optimizations**
 
 > **✨ Migration Complete!** This portfolio has been migrated from Vite to Next.js 15 with Static Site Generation for optimal SEO.
-> See [MIGRATION_SUMMARY.md](./MIGRATION_SUMMARY.md) for full details.
+> 🚀 **Performance Optimized!** Code-splitting, lazy loading, PWA support, and Web Vitals monitoring.
+> See [MIGRATION_SUMMARY.md](./MIGRATION_SUMMARY.md) and [PERFORMANCE_OPTIMIZATIONS.md](./PERFORMANCE_OPTIMIZATIONS.md) for full details.
 
 ## 🚀 Quick Start
 
@@ -23,8 +24,17 @@ npm run start
 
 Visit: http://localhost:3000
 
-## 📋 What's New (Next.js Migration)
+## 📋 What's New (Latest Updates)
 
+### ✨ Performance Optimizations (March 2026)
+✅ **Code Splitting** - GSAP and EmailJS lazy-loaded (-70KB initial bundle)
+✅ **Image Optimization** - Custom OptimizedImage component with lazy loading
+✅ **PWA Support** - Service worker with offline caching
+✅ **Web Vitals Monitoring** - Vercel Analytics + Speed Insights
+✅ **LCP Optimization** - Preloaded hero image, faster splash screen
+✅ **GitHub Stats** - Client-side fetch with loading states
+
+### 🏗️ Architecture (Next.js Migration)
 ✅ **Next.js 15** with App Router
 ✅ **Static Site Generation (SSG)** - Perfect for SEO
 ✅ **Multiple Routes** - Dedicated pages for each section
