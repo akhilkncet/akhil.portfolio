@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, ImgHTMLAttributes } from 'react';
+import { ImgHTMLAttributes } from 'react';
 
 interface OptimizedImageProps extends Omit<ImgHTMLAttributes<HTMLImageElement>, 'src'> {
   src: string;
@@ -20,9 +20,6 @@ export function OptimizedImage({
   loading: loadingProp,
   ...props 
 }: OptimizedImageProps) {
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [error, setError] = useState(false);
-
   // For static export, we'll use native img with loading optimization
   const loading = priority ? 'eager' : (loadingProp || 'lazy');
 
@@ -34,8 +31,6 @@ export function OptimizedImage({
       height={height}
       loading={loading}
       decoding="async"
-      onLoad={() => setIsLoaded(true)}
-      onError={() => setError(true)}
       className={className}
       {...props}
     />
